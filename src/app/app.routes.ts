@@ -14,6 +14,14 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/contact-page/contact-page.component'),
   },
   {
+    path: 'pokemons',
+    loadComponent: () => import('./pages/pokemons/pokemons-page.component'),
+  },
+  {
+    path: 'pokemons/:id',
+    loadComponent: () => import('./pages/pokemon-page/pokemon-page.component'),
+  },
+  {
     path: '**',
     redirectTo: () => {
       // const authService = inject(authService);
