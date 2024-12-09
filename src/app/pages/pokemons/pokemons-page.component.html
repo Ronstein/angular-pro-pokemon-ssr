@@ -17,7 +17,10 @@
 
 <!-- Todo Buttons Cargar Siguiente y Anterior -->
 <div class="flex justify-between">
-  <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
-  <button (click)="loadPokemons(1)" class="mt-2">Siguientes</button>
+  <button [disabled]="currentPage() === 1" [routerLink]="['/pokemons/page',currentPage()! - 1]"
+    class="mt-2">Anteriores</button>
+  <button [routerLink]="['/pokemons/page',currentPage()! + 1]" class="mt-2">Siguientes</button>
+  <!-- <button (click)="loadPokemons(-1)" class="mt-2">Anteriores</button>
+  <button (click)="loadPokemons(1)" class="mt-2">Siguientes</button> -->
   <!-- <button (click)="currentName.set('Otro Nombre')" class="mt-2">{{currentName()}}</button> -->
 </div>
